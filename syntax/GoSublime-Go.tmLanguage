@@ -17,6 +17,42 @@
 	<key>patterns</key>
 	<array>
 		<dict>
+			<key>match</key>
+			<string>([[:alpha:]_][[:alnum:]_]*)(?:\.)</string>
+			<key>name</key>
+			<string>object.call.go</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(func)\b</string>
+			<key>name</key>
+			<string>function.definition.go</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>variable.full.keyword.go</string>
+				</dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.full.name.go</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>variable.full.type.go</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?:var[[:blank:]]*)([[:alpha:]_][[:alnum:]_]*)(.*)</string>
+			<key>name</key>
+			<string>meta.initialization.full.go</string>
+		</dict>
+		<dict>
 			<key>begin</key>
 			<string>/\*</string>
 			<key>end</key>
